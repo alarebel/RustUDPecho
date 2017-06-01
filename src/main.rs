@@ -7,7 +7,8 @@ use mio::deprecated::{EventLoop, Handler};
 use slab::*;
 use mio::udp::*;
 use std::net::{SocketAddr, SocketAddrV4};
-use bytes::deprecated::{Buf, ByteBuf, MutByteBuf, SliceBuf};
+//use bytes::deprecated::{Buf, ByteBuf, MutByteBuf, SliceBuf};
+use bytes::{Bytes, BytesMut, Buf, BufMut};
 
 const START_PORT:u16 = 1024;
 const END_PORT:u16 = 65535;
@@ -26,7 +27,7 @@ struct UdpHandler {
 	sockets: UdpSlab,
 	n: u64,
 	t: time::Timespec,
-	buf: MuteByteBuf
+	buf: BufMut
 }
 
 impl UdpHandler{

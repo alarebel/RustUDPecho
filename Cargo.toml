@@ -1,0 +1,10 @@
+[package]
+name = "server_test"
+version = "0.1.0"
+authors = ["alarebel"]
+
+[dependencies]
+mio="0.6.8"
+bytes="0.4.4"
+slab="0.3.0"
+time="0.1.37"
